@@ -3,26 +3,20 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color:rgba(255, 127, 80, 0.283);
+    background-color: rgba(255, 127, 80, 0.283);
 }
 
-/* Position the "No" button absolutely within body */
 #noButton {
     position: absolute;
-    margin-left: 150px;
     transition: 0.5s;
-    /* Smooth movement */
 }
 
 #yesButton {
     position: absolute;
-    margin-right: 150px;
-    /* Smooth movement */
 }
 
 .header_text, .text {
     font-family: 'Nunito';
-    font-size: 50px;
     font-weight: bold;
     color: grey;
     text-align: center;
@@ -35,9 +29,7 @@ body {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin-top: 40px; /* Adjusted for better spacing */
-    margin-left: 20px;
-    /* optional: adds some space between the buttons */
+    margin-top: 40px;
 }
 
 .btn {
@@ -64,3 +56,37 @@ body {
     align-items: center;
 }
 
+/* Media Queries */
+@media (max-width: 768px) { /* Tablets and smaller */
+    .header_text, .text {
+        font-size: 30px; /* Smaller font size */
+    }
+
+    .buttons {
+        flex-direction: column; /* Stack buttons vertically */
+        margin-top: 30px;
+    }
+
+    .btn {
+        width: 100%; /* Full width buttons */
+        margin: 10px 0; /* Adjust button spacing */
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    #yesButton, #noButton {
+        position: relative; /* Remove absolute positioning */
+        margin: 10px 0; /* Space between buttons */
+        width: 100%;
+    }
+
+    .gif_container {
+        margin-bottom: 20px; /* Add space below GIF */
+    }
+}
+
+@media (max-width: 400px) { /* Smaller phones */
+    .header_text, .text {
+        font-size: 24px; /* Even smaller font size */
+    }
+}
