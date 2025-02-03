@@ -2,21 +2,24 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh; /* Use min-height to allow content to expand */
     background-color: #CBE6EF;
+    margin: 0; /* Remove default body margins */
 }
 
 #noButton {
-    position: absolute;
+    position: relative; /* No longer absolute */
     transition: 0.5s;
     border: 2px solid #ffffff;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    margin: 10px; /* Consistent margins for buttons */
 }
 
 #yesButton {
-    position: absolute;
+    position: relative; /* No longer absolute */
     border: 2px solid #ffffff;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    margin: 10px; /* Consistent margins for buttons */
 }
 
 .header_text {
@@ -30,10 +33,11 @@ body {
 
 .buttons {
     display: flex;
-    flex-direction: row;
+    flex-direction: row; /* Default: side-by-side */
     justify-content: center;
     align-items: center;
     margin-top: 55px;
+    flex-wrap: wrap; /* Allow wrapping if necessary */
 }
 
 .madewithlove {
@@ -48,7 +52,7 @@ body {
     text-align: center;
     display: inline-block;
     font-size: 16px;
-    margin: 4px 2px;
+    margin: 10px; /* Consistent margins for buttons */
     cursor: pointer;
     border: none;
     border-radius: 12px;
@@ -65,44 +69,57 @@ body {
     align-items: flex-end;
 }
 
-
 /* Media Queries */
 
-@media (max-width: 768px) { /* Target tablets and smaller */
+@media (max-width: 768px) { /* Tablets and Phones */
     .header_text {
-        font-size: 30px; /* Smaller font size on mobile */
+        font-size: 30px;
     }
 
     .buttons {
-        flex-direction: column; /* Stack buttons vertically */
-        margin-top: 30px; /* Adjust margin */
+        flex-direction: row; /* Keep buttons side by side */
+        flex-wrap: wrap; /* Allow wrapping onto the next line */
+        margin-top: 30px;
     }
 
     .btn {
-        width: 100%; /* Full width buttons */
-        margin: 10px 0; /* Adjust button spacing */
-        padding: 10px 20px; /* Smaller padding */
+        width: auto; /* Adjust as needed for button width */
+        margin: 10px;
+        padding: 10px 20px;
         font-size: 14px;
     }
 
     #yesButton, #noButton {
-        position: relative; /* No longer absolute */
-        margin: 10px 0; /* Space between buttons */
-        width: 100%; /* Button takes full width on smaller screens */
+        width: auto; /* Adjust as needed for button width */
+        margin: 10px;
     }
 
     .gif_container {
-        margin-bottom: 20px; /* Add space below GIF */
+        margin-bottom: 20px;
     }
 
     .madewithlove {
-        padding-top: 2em; /* Adjust padding */
+        padding-top: 2em;
         font-size: smaller;
+    }
+
+    body {
+        min-height: 100vh; /* Ensure it takes full viewport height */
+        display: flex;
+        flex-direction: column; /* Stack elements vertically */
+        align-items: center; /* Center horizontally */
+        justify-content: flex-start; /* Align content to the top */
     }
 }
 
-@media (max-width: 400px) { /* Target smaller phones */
+
+@media (max-width: 400px) { /* Smaller phones */
     .header_text {
-        font-size: 24px; /* Even smaller font size */
+        font-size: 24px;
+    }
+
+    .btn, #yesButton, #noButton {
+        font-size: 12px; /* Smaller font on very small screens */
+        padding: 8px 16px; /* Smaller padding */
     }
 }
